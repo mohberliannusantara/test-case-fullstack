@@ -7,6 +7,10 @@ class Transaksi extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('transaksi_model');
+
+    if (!$this->session->logged_in == TRUE) {
+			redirect('autentikasi','refresh');
+		}
   }
 
   function index()

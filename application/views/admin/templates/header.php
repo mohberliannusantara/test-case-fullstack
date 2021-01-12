@@ -48,6 +48,12 @@
               <p>Transaksi</p>
             </a>
           </li>
+          <li class="nav-item <?php if ($page == 'Pengguna'): ?>active<?php endif; ?>">
+            <a class="nav-link" href="<?php echo base_url('admin/pengguna')?>">
+              <i class="material-icons">person</i>
+              <p>Pengguna</p>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -56,7 +62,7 @@
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper">
-            <a class="navbar-brand" href="javascript:;">Table List</a>
+            <a class="navbar-brand" href="javascript:;"><?php echo $page ?></a>
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>

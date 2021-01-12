@@ -36,6 +36,9 @@
           <li class="nav-item <?php if ($page == 'Produk'): ?>active<?php endif; ?>">
             <a class="nav-link" href="<?php echo base_url('produk') ?>">Produk</a>
           </li>
+          <li class="nav-item <?php if ($page == 'Pesanan'): ?>active<?php endif; ?>">
+            <a class="nav-link" href="<?php echo base_url('pesanan') ?>">Pesanan</a>
+          </li>
           <li class="nav-item <?php if ($page == 'Pembelian'): ?>active<?php endif; ?>">
             <a class="nav-link" href="<?php echo base_url('pembelian') ?>">
               <img src="<?php echo base_url('assets/img/shopping_cart.png') ?>" alt="" style="width:20px;">(<?php echo count($keranjang); ?>)

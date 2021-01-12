@@ -31,20 +31,20 @@
                       <td><?php echo $value->tanggal ?></td>
                       <td>Rp. <?php echo number_format($value->total,0,',','.'); ?></td>
                       <?php if ($value->status == 1) { ?>
-                        <td><a href="<?php echo base_url('admin/transaksi/send/'.$value->id)?>" class="btn btn-info">Perlu Dikirim</a></td>
+                        <td><a href="<?php echo base_url('admin/transaksi/send/'.$value->id)?>" class="btn btn-info">Kirim</a></td>
                       <?php } elseif ($value->status == 2) { ?>
                         <td>Proses Kirim</td>
                       <?php } elseif ($value->status == 3) { ?>
                         <td>Sampai</td>
                       <?php } ?>
 
-                      <?php if ($value->konfirmasi == 1) { ?>
+                      <?php if ($value->konfirmasi == 0): ?>
                         <td>Proses</td>
-                      <?php } elseif ($value->konfirmasi == 2) { ?>
+                      <?php elseif ($value->konfirmasi == 1): ?>
                         <td>Menunggu Konfirmasi</td>
-                      <?php } elseif ($value->konfirmasi == 3) { ?>
+                      <?php elseif ($value->konfirmasi == 2): ?>
                         <td>Selesai</td>
-                      <?php } ?>
+                      <?php endif; ?>
                       <td>
                         <a href="<?php echo base_url('admin/transaksi/detail/'.$value->id) ?>" class="btn btn-success">
                           <i class="material-icons">zoom_out_map</i>

@@ -30,6 +30,7 @@
                 </tbody>
               </table>
             </div>
+            <a class="btn btn-danger" href="javascript:window.history.go(-1);">Kembali</a>
           </div>
         </div>
       </div>

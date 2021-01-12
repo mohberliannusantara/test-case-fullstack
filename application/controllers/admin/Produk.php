@@ -8,6 +8,10 @@ class Produk extends CI_Controller{
     parent::__construct();
     $this->load->model('produk_model');
     $this->load->library('form_validation');
+    
+    if (!$this->session->logged_in == TRUE) {
+			redirect('autentikasi','refresh');
+		}
   }
 
   function index()

@@ -47,6 +47,12 @@ class Transaksi_model extends CI_Model{
 		}
 	}
 
+  public function getOrders($id)
+  {
+    $query = $this->db->query("SELECT penjualan.*, pengguna.id as id_user FROM penjualan JOIN pengguna ON pengguna.id = penjualan.id_pengguna WHERE penjualan.id_pengguna='$id' ORDER BY penjualan.id DESC");
+		return $query->result();
+  }
+
   function updateData($where,$data,$table){
 		$this->db->where($where);
 		$this->db->update($table,$data);
@@ -56,6 +62,5 @@ class Transaksi_model extends CI_Model{
 	{
 		$query = $this->db->query("SELECT penjualan.id, detil_penjualan.*, produk.id,produk.nama FROM detil_penjualan JOIN penjualan ON detil_penjualan.fa_order = penjualan.id JOIN produk ON produk.id=detil_penjualan.id_produk WHERE detil_penjualan.fa_order='$id'");
 		return $query->result();
-
 	}
 }

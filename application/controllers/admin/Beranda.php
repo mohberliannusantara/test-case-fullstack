@@ -7,6 +7,13 @@ class Beranda extends CI_Controller{
   {
     parent::__construct();
     $this->load->model('produk_model');
+
+    if (!$this->session->logged_in == TRUE) {
+			redirect('autentikasi','refresh');
+		}
+    if ($this->session->id != 1 ) {
+			redirect('beranda');
+		}
   }
 
   function index()
